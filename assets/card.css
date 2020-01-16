@@ -1,0 +1,26 @@
+.movie_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.sgl-movie {
+  height: 278px;
+  width: 185px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px grey;
+  margin-top: 15px;
+  transition-duration: 0.2s;
+}
+
+.sgl-movie:hover {
+  box-shadow: 1px 1px 5px black;
+  transition-duration: 0.2s;
+}
+
+.sgl-movie:hover{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  transition-duration: 0.5s;
+}

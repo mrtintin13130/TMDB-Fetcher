@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/card.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src https://api.themoviedb.org:*; img-src https://image.tmdb.org:*; font-src https://fonts.gstatic.com:*; style-src-elem *"> -->
+  <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src https://api.themoviedb.org:*; img-src https://image.tmdb.org:*; font-src https://fonts.gstatic.com:*; style-src-elem *"> -->
+  <title>TMDB To CSV v0.1a</title>
+</head>
+
+<body>
+
+  <div class="nav">
+    <h1 class="app_title">TMDB FETCHER</h1>
+    <movies class="movie_nav">
+      <h3 class="nav_title">Movies</h3>
+      <button class="navBtn" id="btn_movies_title">Recherche par titre</button>
+      <button class="navBtn" id="btn_movies_id">Recherche par ID</button>
+    </movies>
+    <movies class="movie_nav">
+      <h3 class="nav_title">TV Shows <span style="font-size: 9px;">(comming soon)</span></h3>
+      <button class="navBtn" id="btn_movies_title" disabled>Recherche par titre</button>
+      <button class="navBtn" id="btn_movies_id" disabled>Recherche par ID</button>
+    </movies>
+  </div>
+
+
+
+  <div id="content">
+
+    <div id="api">
+      <p id="api-alert" class="alert">Please provide your TMDB API key first</p>
+      <form id="api-form">
+        TMDB API Key:
+        <input type="text" id="api-key" class="api-key" style="width: 50%;" placeholder="e.g. fe5g3456t9f345c5490re0611ha7gt12">
+        <input type="submit">
+      </form>
+    </div>
+
+    <!-- SEARCH MOVIES BY ID-->
+    <div id="search_by_id" class="is_shown">
+      <form id="id_movie_form">
+        MOVIE ID:
+        <input type="text" id="movie" name="movie" placeholder="e.g. 324857"><br>
+        EMBED VIDEO:
+        <input type="text" id="embed" name="embed" placeholder="e.g. youtube.com/video/example"><br>
+        <select id="language" name="language">
+          <option value="fr-FR" selected>Français</option>
+          <option value="en-US">English</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+      <div class="movie">
+        <div class="movie_img">
+          <img id="poster">
+        </div>
+        <div class="movie_details">
+          <h1 id="title"></h1>
+          <p id="date"></p>
+          <p id="overview"></p>
+          <p id="tmdb_id" class="movie_id"></p>
+          <p id="imdb_id" class="movie_id"></p>
+        </div>
+      </div>
+      <br>
+      <textarea id="movie-csv"></textarea>
+    </div>
+
+    <!-- SEARCH MOVIES BY TITLE -->
+    <div id="search_by_title" class="is_hidden">
+      <form id="title_movie_form">
+        MOVIE TITLE:<br>
+        <input type="text" id="movie-t" name="movie-t" placeholder="e.g. Spider-Man"><br>
+        EMBED VIDEO:<br>
+        <input type="text" id="embed-t" name="embed-t" placeholder="e.g. youtube.com/video/example"><br>
+        <select id="language-t" name="language_t">
+          <option value="fr-FR" selected>Français</option>
+          <option value="en-US">English</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+      <div class="movie_list" id="movie_list">
+      </div>
+    </div>
+
+    <!-- <div id="tv_shows_by_id" class="is_hidden">
+      <form id="id_tv_shows_form">
+        MOVIE TITLE:<br>
+        <input type="text" id="tvshows" name="tvshows" placeholder="e.g. The Simpsons"><br>
+        <select id="language-t" name="language_t">
+          <option value="fr-FR" selected>Français</option>
+          <option value="en-US">English</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+    </div> -->
+
+  </div>
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+
+</body>
+
+</html>
+
+
+
+<!-- CARD MOVIE
+
+<div class="container">
+  <div class="cellphone-container">    
+      <div class="movie">       
+        <div class="movie-img"></div>
+        <div class="text-movie-cont">
+          <div class="mr-grid">
+            <div class="col1">
+              <h1>Interstellar</h1>
+              <ul class="movie-gen">
+                <li>PG-13  /</li>
+                <li>2h 49min  /</li>
+                <li>2015</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+-->
