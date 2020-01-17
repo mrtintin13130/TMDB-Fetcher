@@ -40,6 +40,14 @@ function checkApiKey(e) {
             } else {
                 document.getElementById("api").innerHTML = "<p style=\"font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; color: grey; font-size: 11px;\">TMDB API Key: " + api + "</p><br>"
                 localStorage.setItem("api_key", api)
+                movie = document.getElementById("movie")
+                embed = document.getElementById("embed")
+                movie_t = document.getElementById("movie-t")
+                embed_t = document.getElementById("embed-t")
+                movie.disabled = false
+                embed.disabled = false
+                movie_t.disabled = false
+                embed_t.disabled = false
             }
         })
         .catch(function (error) {
