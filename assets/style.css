@@ -152,3 +152,10 @@ select {
     text-align: center;
     margin: 5px 0 5px 0;
 }
+
+.version {
+    position: absolute; 
+    bottom: 1px;
+    margin-left: 60px;
+    color: grey;
+}
