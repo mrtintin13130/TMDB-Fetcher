@@ -44,6 +44,10 @@ function TvShowById(id) {
             document.getElementById('tmdb_id-s').textContent = "TMDB ID: " + data.id;
             document.getElementById('imdb_id-s').textContent = "IMDB ID: " + data.imdb_id;
             embed = document.getElementById('embed-s').value
+            seasons_t = document.getElementById("seasons")
+            data.seasons.forEach(season => {
+                seasons_t.innerHTML += "<li style='background-image: url(\"https://image.tmdb.org/t/p/w185" + season.poster_path + "\"' id='" + season.id + "'></li>"
+            })
             textarea = document.getElementById('tvshow-csv')
             textarea.style.display = 'block'
             genres = ""

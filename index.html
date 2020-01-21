@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="assets/style.css">
   <link rel="stylesheet" type="text/css" href="assets/card.css">
+  <link rel="stylesheet" type="text/css" href="assets/tv-shows.css">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
@@ -22,9 +23,8 @@
       <button class="navBtn" id="btn_movies_id">Recherche par ID</button>
     </movies>
     <movies class="movie_nav">
-      <h3 class="nav_title">TV Shows <span style="font-size: 9px;">(comming soon)</span></h3>
+      <h3 class="nav_title">TV Shows</h3>
       <button class="navBtn" id="btn_tv_title">Recherche par titre</button>
-      <button class="navBtn" id="btn_tv_id" disabled>Recherche par ID</button>
     </movies>
     <version class="version">v0.1.1-alpha</version>
   </div>
@@ -137,6 +137,8 @@
         </div>
       </div>
       <br>
+      <ul class="seasons" id="seasons">
+      </ul>
       <textarea id="tvshow-csv"></textarea>
     </div>
   </div>

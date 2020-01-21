@@ -8,8 +8,9 @@ function toggleDiv(button) {
     movie_by_title = document.getElementById("search_by_title")
     movie_by_id = document.getElementById("search_by_id")
     tv_by_title = document.getElementById("tv_shows_by_title")
+    tv_by_id = document.getElementById("tv_shows_by_id")
 
-    tabs = [movie_by_title, movie_by_id, tv_by_title]
+    tabs = [movie_by_title, movie_by_id, tv_by_title, tv_by_id]
     tabs.forEach(tab => {
         tab.className = "is_hidden"
         if (tab.id == button) {

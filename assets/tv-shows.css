@@ -1,0 +1,42 @@
+/* .horizontal-scroll-wrapper {
+    width: 185px;
+    height: 95vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    transform:rotate(-90deg);
+}
+
+.horizontal-scroll-wrapper>div {
+    width: 185px;
+    height: 278px;
+    transform: rotate(90deg);
+    transform-origin: right top;
+}
+*/
+
+ul.seasons {
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    width: -webkit-calc(98vw - 220px);
+    overflow-x: auto;
+    border: 1px solid black;
+}
+
+ul.seasons li {
+    flex: 0 0 auto;
+    width: 185px;
+    height: 278px;
+    margin: 10px 5px 10px 5px;
+    list-style-type: none;
+    transition-duration: 0.2s;
+}
+
+ul.seasons li:hover {
+    box-shadow: 1px 1px 5px black;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
