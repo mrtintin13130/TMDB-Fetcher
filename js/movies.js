@@ -17,6 +17,7 @@ function MoviesByTitle(title) {
         .then(response => response.json())
         .then(data => {
             data.results.forEach(movie => {
+                if (movie.poster_path === null) { return; }
                 document.getElementById("movie_list").innerHTML += "<div class='sgl-movie' id='" + movie.id + "' onclick='MoviesById(" + movie.id + ")' style='background-image: url(\"https://image.tmdb.org/t/p/w185" + movie.poster_path + "\"'> \
                                                                 \
                                                                     </div>"

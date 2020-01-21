@@ -4,6 +4,12 @@
   justify-content: space-evenly;
 }
 
+.tvshows_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .sgl-movie {
   height: 278px;
   width: 185px;

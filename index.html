@@ -34,10 +34,15 @@
       <p id="api-alert" class="alert">Please provide your TMDB API key first</p>
       <form id="api-form">
         TMDB API Key:
-        <input type="text" id="api-key" class="api-key" style="width: 50%;" placeholder="e.g. fe5g3456t9f345c5490re0611ha7gt12">
+        <input type="text" id="api-key" class="api-key" style="width: 50%;"
+          placeholder="e.g. fe5g3456t9f345c5490re0611ha7gt12">
         <input type="submit">
       </form>
     </div>
+
+    <!--                          -->
+    <!--          MOVIES          -->
+    <!--                          -->
 
     <!-- SEARCH MOVIES BY ID-->
     <div id="search_by_id" class="is_shown">
@@ -85,6 +90,12 @@
       </div>
     </div>
 
+
+    <!--                          -->
+    <!--         TV SHOWS         -->
+    <!--                          -->
+
+    <!-- SEARCH TV SHOWS BY TITLE -->
     <div id="tv_shows_by_title" class="is_hidden">
       <form id="id_tv_shows_form">
         TV SHOW TITLE:<br>
@@ -97,6 +108,36 @@
       </form>
       <div class="tvshows_list" id="tvshows_list">
       </div>
+    </div>
+
+
+    <!-- DISPLAY TV SHOWS BY ID -->
+    <div id="tv_shows_by_id" class="is_hidden">
+      <form id="id_tv_show_form">
+        TV SHOW ID:
+        <input type="text" id="tvshow-s" name="tvshow-s" placeholder="e.g. 324857"><br>
+        EMBED VIDEO:
+        <input type="text" id="embed-s" name="embed-s" placeholder="e.g. youtube.com/video/example"><br>
+        <select id="language-s" name="language-s">
+          <option value="fr-FR" selected>Français</option>
+          <option value="en-US">English</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+      <div class="movie">
+        <div class="movie_img">
+          <img id="poster-s">
+        </div>
+        <div class="movie_details">
+          <h1 id="title-s"></h1>
+          <p id="date-s"></p>
+          <p id="overview-s"></p>
+          <p id="tmdb_id-s" class="movie_id"></p>
+          <p id="imdb_id-s" class="movie_id"></p>
+        </div>
+      </div>
+      <br>
+      <textarea id="tvshow-csv"></textarea>
     </div>
   </div>
 
