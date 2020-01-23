@@ -36,16 +36,17 @@ function TvShowById(id) {
         .then(response => response.json())
         .then(data => {
             console.log(data) // Prints result from `response.json()` in getRequest
-            document.getElementById('title-s').textContent = data.title;
+            document.getElementById('title-s').textContent = data.name;
             document.getElementById('overview-s').textContent = "Synopsis: " + data.overview;
             poster = document.getElementById('poster-s');
             poster.src = "https://image.tmdb.org/t/p/w185" + data.poster_path;
-            document.getElementById('date-s').textContent = "Release date: " + data.release_date;
+            document.getElementById('date-s').textContent = "Release date: " + data.first_air_date;
             document.getElementById('tmdb_id-s').textContent = "TMDB ID: " + data.id;
             document.getElementById('imdb_id-s').textContent = "IMDB ID: " + data.imdb_id;
             embed = document.getElementById('embed-s').value
             seasons_t = document.getElementById("seasons")
             data.seasons.forEach(season => {
+                if (season.season_number == 0) { return; }
                 seasons_t.innerHTML += "<li style='background-image: url(\"https://image.tmdb.org/t/p/w185" + season.poster_path + "\"' id='" + season.id + "'></li>"
             })
             textarea = document.getElementById('tvshow-csv')

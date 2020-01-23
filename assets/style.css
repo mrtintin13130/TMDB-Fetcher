@@ -138,10 +138,12 @@ select {
     width: 100%;
     height: 50px;
     font-size: 15px;
+    text-align: left;
+    padding-left: 30px;
 }
 
 .navBtn:hover {
-    background-color: rgb(236, 98, 48);
+    background-color: rgba(236, 98, 48, 0.801);
     color: white;
     transition-duration: 0.3s;
     cursor: pointer;
@@ -158,4 +160,11 @@ select {
     bottom: 1px;
     margin-left: 60px;
     color: grey;
+}
+
+.navSeparator {
+    margin: 0;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -4,7 +4,8 @@
   "description": "Fetch all movies and TV shows details.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "sass:compile": "node-sass --include-path sass ./assets/Sass/design.scss ./assets/design.css"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -18,7 +19,10 @@
   "author": "Nitram",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^7.1.7"
+    "electron": "^7.1.7",
+    "node-sass": "^4.13.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "compass": "^0.1.1"
+  }
 }
