@@ -36,15 +36,18 @@ function TvShowById(id) {
         .then(response => response.json())
         .then(data => {
             console.log(data) // Prints result from `response.json()` in getRequest
-            document.getElementById('title-s').textContent = data.name;
-            document.getElementById('overview-s').textContent = "Synopsis: " + data.overview;
+            document.getElementById('title1-s').textContent = data.name;
+            document.getElementById('overview-s').textContent = data.overview;
             poster = document.getElementById('poster-s');
             poster.src = "https://image.tmdb.org/t/p/w185" + data.poster_path;
-            document.getElementById('date-s').textContent = "Release date: " + data.first_air_date;
-            document.getElementById('tmdb_id-s').textContent = "TMDB ID: " + data.id;
-            document.getElementById('imdb_id-s').textContent = "IMDB ID: " + data.imdb_id;
+            backdrop = document.getElementById('backdrop-s');
+            backdrop.style.background = "url('https://image.tmdb.org/t/p/w1280" + data.backdrop_path + "')";
+            document.getElementById('date-s').innerHTML = "<i class='far fa-calendar-alt' style='color: white;'></i> " + data.first_air_date;
+            // document.getElementById('tmdb_id-s').textContent = "TMDB ID: " + data.id;
+            // document.getElementById('imdb_id-s').textContent = "IMDB ID: " + data.imdb_id;
             embed = document.getElementById('embed-s').value
             seasons_t = document.getElementById("seasons")
+            seasons_t.innerHTML = ""
             data.seasons.forEach(season => {
                 if (season.season_number == 0) { return; }
                 seasons_t.innerHTML += "<li style='background-image: url(\"https://image.tmdb.org/t/p/w185" + season.poster_path + "\"' id='" + season.id + "'></li>"
@@ -53,7 +56,10 @@ function TvShowById(id) {
             textarea.style.display = 'block'
             genres = ""
             if (data.genres) {
+                g = document.getElementById('genres-s')
+                g.innerHTML = ""
                 data.genres.forEach(gnr => {
+                    g.innerHTML += "<span class='tag'>" + gnr['name'] + "</span>\n"
                     genres += gnr['name'] + ","
                 })
             }

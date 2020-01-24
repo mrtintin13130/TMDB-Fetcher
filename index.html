@@ -7,8 +7,7 @@
   <link rel="stylesheet" type="text/css" href="assets/tv-shows.css">
   <link rel="stylesheet" type="text/css" href="assets/design.css">
 
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -21,26 +20,38 @@
   <div class="nav">
     <h1 class="app_title">TMDB FETCHER</h1>
     <movies class="movie_nav">
+      <h3 class="nav_title">Menu</h3>
+      <button class="navBtn" id="btn_home">Home<i class="fas fa-home fa-lg"
+          style="padding-left: 115px;"></i></button>
+    </movies>
+    <movies class="movie_nav">
       <h3 class="nav_title">Movies</h3>
-      <button class="navBtn" id="btn_movies_title">Search by title<span class="fa fa-film" style="padding-left: 70px;"></span></button><hr class="navSeparator">
-      <button class="navBtn" id="btn_movies_id">Search by ID</button>
+      <button class="navBtn" id="btn_movies_title">Find a Movie<i class="fas fa-film fa-lg"
+          style="padding-left: 75px;"></i></button>
+      <!-- <hr class="navSeparator">
+      <button class="navBtn" id="btn_movies_id">Search by ID<i class="fas fa-search fa-lg"
+          style="padding-left: 75px;"></i></button> -->
     </movies>
     <movies class="movie_nav">
       <h3 class="nav_title">TV Shows</h3>
-      <button class="navBtn" id="btn_tv_title">Search by title</button>
+      <button class="navBtn" id="btn_tv_title">Find a TV Show<i class="fas fa-tv fa-lg"
+          style="padding-left: 54px;"></i></button>
     </movies>
-    <version class="version">v0.1.2-alpha</version>
+    <version class="version">v0.1.3-alpha</version>
   </div>
 
   <div id="content">
-    <div id="api">
-      <p id="api-alert" class="alert">Please provide your TMDB API key first</p>
-      <form id="api-form">
-        TMDB API Key:
-        <input type="text" id="api-key" class="api-key" style="width: 50%;"
-          placeholder="e.g. fe5g3456t9f345c5490re0611ha7gt12">
-        <input type="submit">
-      </form>
+    <div id="home" class="is_shown">
+      <h1 style="text-align: center;">Welcome to TMDB Fetcher</h1>
+      <div id="api">
+        <p id="api-alert" class="alert">Please provide your TMDB API key first</p>
+        <form id="api-form">
+          TMDB API Key:
+          <input type="text" id="api-key" class="api-key" style="width: 50%;"
+            placeholder="e.g. fe5g3456t9f345c5490re0611ha7gt12">
+          <input type="submit">
+        </form>
+      </div>
     </div>
 
     <!--                          -->
@@ -48,8 +59,8 @@
     <!--                          -->
 
     <!-- SEARCH MOVIES BY ID-->
-    <div id="search_by_id" class="is_shown">
-      <form id="id_movie_form">
+    <div id="search_by_id" class="is_hidden">
+      <form id="id_movie_form" class="is_hidden">
         MOVIE ID:
         <input type="text" id="movie" name="movie" placeholder="e.g. 324857"><br>
         EMBED VIDEO:
@@ -60,6 +71,7 @@
         </select>
         <input type="submit" value="Submit">
       </form>
+      <!--
       <div class="movie">
         <div class="movie_img">
           <img id="poster">
@@ -72,7 +84,30 @@
           <p id="imdb_id" class="movie_id"></p>
         </div>
       </div>
-      <br>
+    -->
+
+
+      <div class="movie-card">
+        <div class="container">
+          <img src="" alt="cover" class="cover" id="poster" />
+          <div class="hero" id="backdrop">
+            <div class="details">
+              <div class="title1" id="title1"></div>
+              <div class="title2" id="title2"></div>
+              <!-- rating spot -->
+              <span class="likes" id="date"></span>
+            </div> <!-- end details -->
+          </div> <!-- end hero -->
+          <div class="description">
+            <div class="column1" id="genres">
+            </div> <!-- end column1 -->
+            <div class="column2">
+              <p id="overview"></p>
+            </div> <!-- end column2 -->
+          </div> <!-- end description -->
+        </div> <!-- end container -->
+      </div> <!-- end movie-card -->
+
       <textarea id="movie-csv"></textarea>
     </div>
 
@@ -116,7 +151,7 @@
 
     <!-- DISPLAY TV SHOWS BY ID -->
     <div id="tv_shows_by_id" class="is_hidden">
-      <form id="id_tv_show_form">
+      <form id="id_tv_show_form" class="is_hidden">
         TV SHOW ID:
         <input type="text" id="tvshow-s" name="tvshow-s" placeholder="e.g. 324857"><br>
         EMBED VIDEO:
@@ -127,6 +162,8 @@
         </select>
         <input type="submit" value="Submit">
       </form>
+
+      <!--
       <div class="movie">
         <div class="movie_img">
           <img id="poster-s">
@@ -139,7 +176,37 @@
           <p id="imdb_id-s" class="movie_id"></p>
         </div>
       </div>
-      <br>
+      <br> -->
+
+      <div class="movie-card">
+        <div class="container">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_cover.jpg" alt="cover" class="cover"
+            id="poster-s" />
+          <div class="hero" id="backdrop-s">
+            <div class="details">
+              <div class="title1" id="title1-s">The Hobbit <span>PG-13</span></div>
+              <!-- rating spot -->
+              <span class="likes" id="date-s" style="margin-left: 0;">109 Likes</span>
+            </div> <!-- end details -->
+          </div> <!-- end hero -->
+          <div class="description">
+            <div class="column1" id="genres-s">
+              <span class="tag">action</span>
+              <span class="tag">fantasy</span>
+              <span class="tag">adventure</span>
+            </div> <!-- end column1 -->
+            <div class="column2">
+              <p id="overview-s">Bilbo Baggins is swept into a quest to reclaim the lost Dwarf Kingdom of Erebor from
+                the fearsome
+                dragon Smaug. Approached out of the blue by the wizard Gandalf the Grey, Bilbo finds himself joining a
+                company of thirteen dwarves led by the legendary warrior, Thorin Oakenshield. Their journey will take
+                them into the Wild; through...</p>
+            </div> <!-- end column2 -->
+          </div> <!-- end description -->
+        </div> <!-- end container -->
+      </div> <!-- end movie-card -->
+
+
       <ul class="seasons" id="seasons">
       </ul>
       <textarea id="tvshow-csv"></textarea>

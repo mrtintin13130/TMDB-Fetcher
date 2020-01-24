@@ -43,20 +43,26 @@ function MoviesById(id) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            //console.log(data) // Prints result from `response.json()` in getRequest
-            document.getElementById('title').textContent = data.title;
-            document.getElementById('overview').textContent = "Synopsis: " + data.overview;
+            console.log(data) // Prints result from `response.json()` in getRequest
+            document.getElementById('title1').textContent = data.title;
+            document.getElementById('title2').textContent = data.tagline;
+            document.getElementById('overview').textContent = data.overview;
             poster = document.getElementById('poster');
+            backdrop = document.getElementById('backdrop');
             poster.src = "https://image.tmdb.org/t/p/w185" + data.poster_path;
-            document.getElementById('date').textContent = "Release date: " + data.release_date;
-            document.getElementById('tmdb_id').textContent = "TMDB ID: " + data.id;
-            document.getElementById('imdb_id').textContent = "IMDB ID: " + data.imdb_id;
+            backdrop.style.background = "url('https://image.tmdb.org/t/p/w1280" + data.backdrop_path + "')";
+            document.getElementById('date').innerHTML = "<i class='far fa-calendar-alt' style='color: white;'></i> " + data.release_date;
+            // document.getElementById('tmdb_id').textContent = "TMDB ID: " + data.id;
+            // document.getElementById('imdb_id').textContent = "IMDB ID: " + data.imdb_id;
             embed = document.getElementById('embed-t').value
             textarea = document.getElementById('movie-csv')
             textarea.style.display = 'block'
             genres = ""
             if (data.genres) {
+                g = document.getElementById('genres')
+                g.innerHTML = ""
                 data.genres.forEach(gnr => {
+                    g.innerHTML += "<span class='tag'>" + gnr['name'] + "</span>\n"
                     genres += gnr['name'] + ","
                 })
             }

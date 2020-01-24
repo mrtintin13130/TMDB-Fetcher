@@ -23,7 +23,6 @@ ul.seasons {
     flex-direction: row;
     width: -webkit-calc(98vw - 220px);
     overflow-x: auto;
-    border: 1px solid black;
 }
 
 ul.seasons li {

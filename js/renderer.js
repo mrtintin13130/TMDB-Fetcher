@@ -31,7 +31,7 @@ function checkApiKey(e) {
                 console.log("ERROR IN API KEY !")
                 document.getElementById("api-alert").innerHTML = "<b>Wrong API key !</b>"
             } else {
-                document.getElementById("api").innerHTML = "<p style=\"font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; color: grey; font-size: 11px;\">TMDB API Key: " + api + "</p><br>"
+                document.getElementById("api").innerHTML = "<p style=\"font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; color: grey; font-size: 11px;\">Your TMDB API Key: " + api + "</p><br>"
                 localStorage.setItem("api_key", api)
                 movie = document.getElementById("movie")
                 embed = document.getElementById("embed")

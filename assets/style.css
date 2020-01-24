@@ -16,10 +16,11 @@ body {
     margin-block-end: 0;
 }
 
-#date {
+#date, #date-s {
     margin-block-start: 0;
-    color: grey;
+    color: white;
     font-size: 14px;
+    padding: 4px;
 }
 
 .alert {

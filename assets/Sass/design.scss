@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #5C7FB8
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.movie-card {
+  font: 14px/22px "Lato", Arial, sans-serif;
+  color: rgb(109, 109, 109);
+  margin-bottom: 100px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  position: relative;
+}
+
+.hero {
+  height: 342px;
+  margin:0;
+  position: relative;
+  overflow: hidden;
+  z-index:1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: url("");
+}
+
+.hero:before {
+  content:'';
+  width:100%; height:100%;
+  position:absolute;
+  overflow: hidden;
+  top:0; left:0;
+  z-index:-1;
+  transform: skewY(-2.2deg);
+  transform-origin:0 0;
+  
+  //chrome antialias fix
+  -webkit-backface-visibility: hidden;
+}
+
+.cover {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+  z-index: 2;
+}
+
+.details {
+  
+  padding: 190px 0 0 280px;
+  
+  
+  .title1 {
+    color: white;
+    font-size: 44px;
+    margin-bottom: 13px;
+    position: relative;
+    
+    span {
+      position: absolute;
+      top: 3px;
+      margin-left: 12px;
+      background: #C4AF3D;
+      border-radius: 5px;
+      color: #544C21;
+      font-size: 14px;
+      padding: 0px 4px;
+      
+    }
+  }
+
+  .title2 {    
+    color: rgb(216, 216, 216);
+    font-size: 23px;    
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+  
+  
+  .likes {
+    margin-left: 24px;
+    background-color: rgba(179, 179, 179, 0.712);
+    border-radius: 10px;
+  }
+  
+  
+  .likes:before {
+    position: relative;
+    top: 2px;
+    padding-right: 7px;
+  }
+
+}
+
+.description {
+  
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B1B0AC;
+  
+}
+
+.column1 {
+  padding-left: 50px;
+  padding-top: 120px;
+  width: 220px;
+  float: left;
+  text-align: center;
+}
+
+.tag {
+  background: rgb(233, 233, 233);
+  border-radius: 10px;
+  padding: 3px 8px;
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 35px;
+  cursor: pointer;
+  color: rgb(97, 97, 97);
+}
+
+.tag:hover {
+  background: #ddd;
+}
+
+.column2 {
+  padding-left: 41px;
+  padding-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  width: 60%;
+  float: left;
+}
