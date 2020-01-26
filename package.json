@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "sass:compile": "node-sass --include-path sass ./assets/Sass/design.scss ./assets/design.css"
+    "sass:compile": "node-sass --include-path sass ./assets/Sass/design.scss ./assets/design.css",
+    "build:windows": "electron-packager . TMDB-Fetcher --platform=win32",
+    "build:mac": "electron-packager ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [

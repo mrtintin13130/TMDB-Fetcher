@@ -43,7 +43,7 @@ function MoviesById(id) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            console.log(data) // Prints result from `response.json()` in getRequest
+            // console.log(data) // Prints result from `response.json()` in getRequest
             document.getElementById('title1').textContent = data.title;
             document.getElementById('title2').textContent = data.tagline;
             document.getElementById('overview').textContent = data.overview;
@@ -68,6 +68,17 @@ function MoviesById(id) {
             }
             genres = genres.slice(0, -1)
             textarea.textContent = ", https://image.tmdb.org/t/p/w185" + data.poster_path + ", " + ", " + data.budget + ", \"" + genres + "\", movie_url, " + embed + ", " + "1, " + data.id + ", " + data.imdb_id + ", " + data.original_language + ", " + data.original_title + ", " + data.overview + ", " + data.popularity + ", " + data.release_date + ", " + data.revenue + ", " + data.runtime + ", " + data.status + ",, " + data.title + ",, " + data.vote_average
+            
+            //send to preload.js
+            filebtn = document.getElementById('btn_file');
+            filebtn.addEventListener('click', transferToFile)
+
+            function transferToFile() {
+                filebtn.removeEventListener('click', transferToFile)
+                console.log("test")
+                window.addToFile(data);
+            }
         })
         .catch(error => console.error(error))
 }
+
