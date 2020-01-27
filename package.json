@@ -1,6 +1,6 @@
 {
   "name": "tmdb-fetcher",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Fetch all movies and TV shows details.",
   "main": "main.js",
   "scripts": {
@@ -24,7 +24,5 @@
     "electron": "^7.1.7",
     "node-sass": "^4.13.1"
   },
-  "dependencies": {
-    "compass": "^0.1.1"
-  }
+  "dependencies": {}
 }

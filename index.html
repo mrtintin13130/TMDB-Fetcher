@@ -6,6 +6,8 @@
   <link rel="stylesheet" type="text/css" href="assets/card.css">
   <link rel="stylesheet" type="text/css" href="assets/tv-shows.css">
   <link rel="stylesheet" type="text/css" href="assets/design.css">
+  <link rel="stylesheet" type="text/css" href="assets/lists.css">
+
 
   <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -21,13 +23,14 @@
     <h1 class="app_title">TMDB FETCHER</h1>
     <movies class="movie_nav">
       <h3 class="nav_title">Menu</h3>
-      <button class="navBtn" id="btn_home">Home<i class="fas fa-home fa-lg"
-          style="padding-left: 115px;"></i></button>
+      <button class="navBtn" id="btn_home">Home<i class="fas fa-home fa-lg" style="padding-left: 115px;"></i></button>
     </movies>
     <movies class="movie_nav">
       <h3 class="nav_title">Movies</h3>
       <button class="navBtn" id="btn_movies_title">Find a Movie<i class="fas fa-film fa-lg"
           style="padding-left: 75px;"></i></button>
+      <button class="navBtn" id="btn_movies_list">Movies list<i class="fas fa-table fa-lg"
+          style="padding-left: 89px;"></i></button>
       <!-- <hr class="navSeparator">
       <button class="navBtn" id="btn_movies_id">Search by ID<i class="fas fa-search fa-lg"
           style="padding-left: 75px;"></i></button> -->
@@ -103,13 +106,22 @@
             </div> <!-- end column1 -->
             <div class="column2">
               <p id="overview"></p>
+              <button class="learn-more design" id="btn_file">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Add to list</span>
+              </button>
+              <div class="added_to_list" id="added_to_list">
+                <h3 class="info">Movie Added to the export list</h3>
+              </div>
             </div> <!-- end column2 -->
           </div> <!-- end description -->
         </div> <!-- end container -->
       </div> <!-- end movie-card -->
 
       <textarea id="movie-csv"></textarea>
-      <button id="btn_file">Add to file</button>
+
     </div>
 
     <!-- SEARCH MOVIES BY TITLE -->
@@ -212,6 +224,46 @@
       </ul>
       <textarea id="tvshow-csv"></textarea>
     </div>
+
+    <!-- MOVIES LIST -->
+    <div id="movies_list" class="is_hidden">
+      <table>
+        <caption>MOVIES LIST</caption>
+        <tbody id="m_list">
+          <tr id="headers">
+            <th>adult</th>
+            <th>Images</th>
+            <th>belongs_to_collection</th>
+            <th>budget</th>
+            <th>Genres</th>
+            <th>Movie Choice</th>
+            <th>Movie Link</th>
+            <th>Is Affiliate URL ?</th>
+            <th>TMDB ID</th>
+            <th>IMDB ID</th>
+            <th>original_language</th>
+            <th>original_title</th>
+            <th>Description</th>
+            <th>popularity</th>
+            <th>Movie Release Date</th>
+            <th>revenue</th>
+            <th>Movie Run Time</th>
+            <th>movie_status</th>
+            <th>Short description</th>
+            <th>Title</th>
+            <th>video</th>
+            <th>vote_average</th>
+            <th>vote_count</th>
+          </tr>
+        </tbody>
+      </table>
+      <button class="learn-more design download" id="download_movies" style="position: fixed;">
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text" id="btn_download">Download</span>
+      </button>
+    </div>
   </div>
 
   <!-- You can also require other files to run in this process -->
@@ -219,6 +271,7 @@
   <script src="./js/nav.js"></script>
   <script src="./js/movies.js"></script>
   <script src="./js/tv-shows.js"></script>
+  <script src="./js/movies-list.js"></script>
 
 </body>
 

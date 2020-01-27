@@ -55,8 +55,8 @@ function MoviesById(id) {
             // document.getElementById('tmdb_id').textContent = "TMDB ID: " + data.id;
             // document.getElementById('imdb_id').textContent = "IMDB ID: " + data.imdb_id;
             embed = document.getElementById('embed-t').value
-            textarea = document.getElementById('movie-csv')
-            textarea.style.display = 'block'
+            // textarea = document.getElementById('movie-csv')
+            // textarea.style.display = 'block'
             genres = ""
             if (data.genres) {
                 g = document.getElementById('genres')
@@ -67,15 +67,20 @@ function MoviesById(id) {
                 })
             }
             genres = genres.slice(0, -1)
-            textarea.textContent = ", https://image.tmdb.org/t/p/w185" + data.poster_path + ", " + ", " + data.budget + ", \"" + genres + "\", movie_url, " + embed + ", " + "1, " + data.id + ", " + data.imdb_id + ", " + data.original_language + ", " + data.original_title + ", " + data.overview + ", " + data.popularity + ", " + data.release_date + ", " + data.revenue + ", " + data.runtime + ", " + data.status + ",, " + data.title + ",, " + data.vote_average
+            // textarea.textContent = ", https://image.tmdb.org/t/p/w185" + data.poster_path + ", " + ", " + data.budget + ", \"" + genres + "\", movie_url, " + embed + ", " + "1, " + data.id + ", " + data.imdb_id + ", " + data.original_language + ", " + data.original_title + ", " + data.overview + ", " + data.popularity + ", " + data.release_date + ", " + data.revenue + ", " + data.runtime + ", " + data.status + ",, " + data.title + ",, " + data.vote_average
             
             //send to preload.js
             filebtn = document.getElementById('btn_file');
             filebtn.addEventListener('click', transferToFile)
+            download_button = document.getElementById('btn_download');
+            download_button.addEventListener('click', window.createFile)
 
             function transferToFile() {
+                // alert("Added to list")
+                listAdded = document.getElementById("added_to_list")
+                listAdded.style.display = "block"
+                setTimeout(function(){ listAdded.style.display = "none"; }, 3000);
                 filebtn.removeEventListener('click', transferToFile)
-                console.log("test")
                 window.addToFile(data);
             }
         })
