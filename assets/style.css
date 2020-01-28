@@ -169,3 +169,34 @@ select {
     margin-left: auto;
     margin-right: auto;
 }
+
+.home_separator {
+    margin: 20px auto 0 auto;
+    width: 170px;
+}
+
+.changelog {
+    margin: 40px 60px 40px 12%;
+}
+
+.news {
+    margin-left: 30px;
+}
+
+.changelog_details {
+    margin-left: 15px;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+    font-size: 15px;
+}
+
+.changelog_type {
+    margin-block-start: 0;
+    margin-block-end: 5px;
+}
+
+.changelog_version {
+    margin-left: 15px;
+    margin-block-start: 25px;
+    margin-block-end: 10px;
+}

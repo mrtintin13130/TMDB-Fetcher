@@ -66,13 +66,11 @@ window.createFile = function () {
           if (err) throw err;
           console.log('File is created successfully.');
         });
+        let myNotification = new Notification('File saved !', {
+          body: 'Your file has been saved in ' + result.filePath
+      })
       }
     })
-
-
-  
-  
-  
 }
 
 
