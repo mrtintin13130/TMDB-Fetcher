@@ -2,6 +2,7 @@
 // It has the same sandbox as a Chrome extension.
 
 const { remote } = require('electron');
+const { dialog } = require('electron').remote;
 var fs = require('fs');
 
 let movie = new Array();
@@ -57,11 +58,21 @@ window.createFile = function () {
     values += "\n"
     m_string += values
   })
+
+  dialog.showSaveDialog({ properties: ['createDirectory'], defaultPath: "/Users/macbook/Documents/movies.csv" })
+    .then(result => {
+      if (result.filePath) {
+        fs.writeFile(result.filePath, m_string, function (err) {
+          if (err) throw err;
+          console.log('File is created successfully.');
+        });
+      }
+    })
+
+
   
-  fs.writeFile("/Users/macbook/Documents/movies.csv", m_string, function (err) {
-    if (err) throw err;
-    console.log('File is created successfully.');
-  });
+  
+  
 }
 
 

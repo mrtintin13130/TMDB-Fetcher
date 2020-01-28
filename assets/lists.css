@@ -31,16 +31,16 @@ tr {
 
 .added_to_list {
     z-index: 5;
-    background-color: rgba(255, 255, 255, 0.911);
+    background-color: rgba(255, 255, 255, 0.959);
     color: green;
     border: 2px solid green;
-    border-radius: 15px;
+    border-radius: 8px;
     display: none;
     position: fixed;
     top: 5px;
     left: 50%;
     transform: translate(-50%, 0);
-    padding: 25px;
+    padding: 10px 20px 10px 20px;
 
 }
 

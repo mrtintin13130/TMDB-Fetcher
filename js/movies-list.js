@@ -7,34 +7,36 @@ function moviesList(data) {
 
 function displayMoviesData() {
     var table = document.getElementsByClassName("data");
-    while(table.length > 0){
+    while (table.length > 0) {
         table[0].parentNode.removeChild(table[0]);
     }
 
-    movies.forEach(movie => {
-        // Create a row
-        row = document.createElement("TR");
+    if (movies) {
+        movies.forEach(movie => {
+            // Create a row
+            row = document.createElement("TR");
 
-        row.className = "data"
+            row.className = "data"
 
-        // Get objects values
-        cells = Object.values(movie)        
+            // Get objects values
+            cells = Object.values(movie)
 
-        // Create cells
-        cells.forEach(cell => {
-            td = document.createElement("TD")
+            // Create cells
+            cells.forEach(cell => {
+                td = document.createElement("TD")
 
-            // Create node
-            node = document.createTextNode(cell);
+                // Create node
+                node = document.createTextNode(cell);
 
-            // Append node to cell
-            td.appendChild(node);
+                // Append node to cell
+                td.appendChild(node);
 
-            // Append cell to row
-            row.appendChild(td)
-        })
+                // Append cell to row
+                row.appendChild(td)
+            })
 
-        // Append to html
-        document.getElementById("m_list").appendChild(row);
-    });
+            // Append to html
+            document.getElementById("m_list").appendChild(row);
+        });
+    }
 }
