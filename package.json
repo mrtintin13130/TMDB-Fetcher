@@ -21,7 +21,7 @@
   "author": "Nitram",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^7.1.7",
+    "electron": "^15.5.5",
     "node-sass": "^4.13.1"
   },
   "dependencies": {}
